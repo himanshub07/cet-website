@@ -1,0 +1,47 @@
+College Name,Course,OPEN,OBC,SC,ST,college code,College Type,University
+"MIT Academy of Engineering, Alandi (D), Pune",Computer Engineering,98.79,98.65,96.32,95.42,6146,Private,SPPU
+"Vishwakarma Institute of Information Technology, Pune",Computer Engineering,98.88,98.8,96.89,96.02,6273,Autonomous,SPPU
+"Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Computer Engineering,98.84,98.68,92.89,92.41,6207,Autonomous,SPPU
+"Pune Institute of Computer Technology (PICT), Pune",Computer Engineering,99.36,99.31,97.89,97.69,6271,Autonomous,SPPU
+"MKSSS's Cummins College of Engineering for Women, Pune",Computer Engineering,98.47,98.34,96.64,96.43,6276,Non-Autonomous,SPPU
+"AISSMS College of Engineering, Pune",Computer Engineering,97.14,96.93,92.45,92.1,6282,Non-Autonomous,SPPU
+"MIT World Peace University (MIT-WPU), Pune",Computer Science and Engineering,97.79,97.58,92.24,95.21,6148,Autonomous,SPPU
+"Marathwada Mitra Mandal’s College of Engineering, Pune",Computer Engineering,96.73,96.41,93.45,93.54,6156,Non-Autonomous,SPPU
+,,,,,,,,
+"Government College of Engineering, Amravati",Information Technology,95.34,94.95,88.78,89.67,1002,Non-Autonomous,Other
+"Government College of Engineering, Yavatmal",Information Technology,90.58,89.96,85.89,84.89,1012,Non-Autonomous,Other
+"Prof. Ram Meghe Institute of Technology & Research, Amravati",Information Technology,83.25,81.83,74.88,75.34,1105,Autonomous,Other
+"Sipna College of Engineering & Technology, Amravati",Information Technology,78.28,77.03,72.67,72.24,1114,Autonomous,Other
+"Government College of Engineering, Amravati",Artificial Intelligence and Data Science,75.18,72.58,70.23,69.43,1002,Non-Autonomous,Other
+"Government College of Engineering, Yavatmal",Artificial Intelligence and Data Science,70.92,70.93,59.64,61.23,1012,Non-Autonomous,Other
+"Prof. Ram Meghe Institute of Technology & Research, Amravati",Artificial Intelligence and Data Science,64,60.63,53.64,52.89,1105,Autonomous,Other
+"Sipna College of Engineering & Technology, Amravati",Artificial Intelligence and Data Science,60.63,57.92,50.34,49.84,1114,Autonomous,Other
+"Government College of Engineering, Amravati",ENTC,91.6,89.5,84.23,82.54,1002,Non-Autonomous,Other
+"Government College of Engineering, Yavatmal",ENTC,88.98,87.48,82.89,80.21,1012,Non-Autonomous,Other
+"Prof. Ram Meghe Institute of Technology & Research, Amravati",ENTC,83.45,82.87,76.76,75.78,1105,Autonomous,Other
+"Sipna College of Engineering & Technology, Amravati",ENTC,79.47,78.48,72.87,70.13,1114,Autonomous,Other
+,,,,,,,,
+Modern Education Society's College of Engineering,Computer Engineering ,94.03,93.56,88.25,56.8,6281,Non-Autonomous,SPPU
+"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawad",Computer Engineering ,93.82,93.3,87.43,60.5,6285,Autonomous,SPPU
+"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station",Computer Engineering ,92.83,91.97,89.03,63.71,6310,Autonomous,SPPU
+"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station",Information Technology ,90.69,88.85,84.08,-,6310,Autonomous,SPPU
+Modern Education Society's College of Engineering,ENTC,86.52,85.4,77.03,25.46,6281,Non-Autonomous,SPPU
+"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawadi",ENTC ,81.83,80.92,72.57,-,6285,Autonomous,SPPU
+"MIT Academy of Engineering, Alandi (D), Pune",ENTC,90.33,88.85,83.91,5.26,6146,Private,SPPU
+"Vishwakarma Institute of Information Technology, Pune",ENTC,97.21,96.7,91.23,55.89,6273,Autonomous,SPPU
+"Vishwakarma Institute of Information Technology, Pune",Artificial Intelligence and Data Science,97.64,97.25,93.48,72.65,6273,Autonomous,SPPU
+"Vishwakarma Institute of Information Technology, Pune",Information Technology,98.68,98.54,96.28,81.99,6273,Autonomous,SPPU
+"Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Information Technology,95.76,95.55,92.2,68.7,6207,Autonomous,SPPU
+"Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",ENTC,90.9,90.8,86.31,-,6207,Autonomous,SPPU
+"Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Artificial Intelligence and Data Science,93.74,93.48,89.54,23.48,6207,Autonomous,SPPU
+"Pune Institute of Computer Technology (PICT), Pune",Information Technology,99.48,99.42,97.98,90.77,6207,Autonomous,SPPU
+"Pune Institute of Computer Technology (PICT), Pune",ENTC,98.71,98.55,95.95,81.99,6207,Autonomous,SPPU
+"AISSMS College of Engineering, Pune",Information Technology,94.95,94.65,90.89,48.14,6282,Non-Autonomous,SPPU
+"AISSMS College of Engineering, Pune",ENTC,89.62,88.59,80.53,-,6282,Non-Autonomous,SPPU
+"AISSMS College of Engineering, Pune",Artificial Intelligence and Data Science,93.4,92.81,87.65,39.31,6282,Non-Autonomous,SPPU
+"MIT World Peace University (MIT-WPU), Pune",Artificial Intelligence and Data Science,98.2,97.31,89.21,54.48,6148,Private,SPPU
+,,,,,,,,
+"G.H.Raisoni College of Engineering,Pune",Information Technology,89.23,87.32,81.22,60.22,6155,Non-Autonomous,SPPU
+"G.H.Raisoni College of Engineering,Pune",ENTC,79.59,76.43,71.34,44.43,6155,Non-Autonomous,SPPU
+"G.H.Raisoni College of Engineering,Pune",Artificial Intelligence and Data Science,83.14,82.22,79.03,33.92,6155,Non-Autonomous,SPPU
+"G.H.Raisoni College of Engineering,Pune",Computer Engineering ,91.25,89.45,83.12,59.43,6155,Non-Autonomous,SPPU

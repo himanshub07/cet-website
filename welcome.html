@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - College Admission</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to College Admission Portal</h1>
+    </header>
+    <div class="container">
+        <div class="info-card" id="userInfoCard">
+            <!-- User info will be filled by JS -->
+        </div>
+        <form id="percentileForm" class="percentile-form">
+            <div class="form-section">
+                <h3>Basic Information</h3>
+                <div class="form-group">
+                    <label for="percentile">Enter Your Percentile:</label>
+                    <input type="number" id="percentile" name="percentile" step="0.0001" min="0" max="100" required placeholder="e.g. 98.1234">
+                </div>
+                <div class="form-group">
+                    <label for="category">Select Your Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">--Select Category--</option>
+                        <option value="OPEN">OPEN</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="NT">NT</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Course Preferences</h3>
+                <div class="form-group">
+                    <label>Select Course(s):</label>
+                    <div class="checkbox-group course-filters">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="courseFilter" value="Computer Engineering" checked>
+                            <span>Computer Engineering</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="courseFilter" value="Artificial Intelligence and Data Science" checked>
+                            <span>Artificial Intelligence and Data Science</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="courseFilter" value="Information Technology" checked>
+                            <span>Information Technology</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="courseFilter" value="ENTC" checked>
+                            <span>ENTC</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>College Type Preferences</h3>
+                <div class="form-group">
+                    <label>Select College Type(s):</label>
+                    <div class="checkbox-group college-filters">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="collegeType" value="Private" checked>
+                            <span>Private</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="collegeType" value="Autonomous" checked>
+                            <span>Autonomous</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="collegeType" value="Non-Autonomous" checked>
+                            <span>Non-Autonomous</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>University Affiliation</h3>
+                <div class="form-group">
+                    <label>Select University Type:</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="universityType" value="SPPU" checked>
+                            <span>SPPU Affiliated</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="universityType" value="Other">
+                            <span>Other Universities</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="search-button">Find Colleges</button>
+            </div>
+        </form>
+        <div id="collegeList" class="results-container">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 College Admission Portal. All rights reserved.</p>
+    </footer>
+    <script src="welcome.js"></script>
+</body>
+</html> 

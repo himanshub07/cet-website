@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Cutoff Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>College Cutoff Checker</h1>
+        <p>Find colleges matching your percentile!</p>
+    </header>
+    <div class="container">
+            <form id="cutoffForm">
+            <div class="form-group">
+                <label for="percentile">Enter Your Percentile:</label>
+                <input type="number" id="percentile" name="percentile" step="0.01" min="0" max="100" required>
+            </div>
+                <button type="submit">Find Colleges</button>
+            </form>
+        <div id="collegeList" class="results-container">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 College Cutoff Checker. All rights reserved.</p>
+    </footer>
+    <script src="cutoff.js"></script>
+</body>
+</html> 

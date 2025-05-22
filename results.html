@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>College Results - College Admission</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>College Results</h1>
+        <div id="resultsContainer">
+            <p>Loading results...</p>
+        </div>
+        <button id="backButton">Back to User Info</button>
+        <div style="margin-top: 20px;">
+            <h3>Full Cutoff List PDF</h3>
+            <p>You can download or view the full cutoff list here:</p>
+            <a href="Pune_Colleges_Cutoff.csv" target="_blank" rel="noopener noreferrer">View Full Cutoff List (PDF)</a>
+        </div>
+    </div>
+    <script>
+        // Load cutoff data dynamically from JSON file
+        let cutoffData = [];
+
+        async function loadCutoffData() {
+            try {
+                const response = await fetch('cutoff_data.json');
+                cutoffData = await response.json();
+                filterAndDisplayResults();
+            } catch (error) {
+                document.getElementById('resultsContainer').innerHTML = '<p>Error loading cutoff data.</p>';
+                console.error('Error loading cutoff data:', error);
+            }
+        }
+
+        // Removed duplicate filterColleges and displayResults functions to avoid redundancy
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'user-info.html';
+        });
+
+        window.onload = function() {
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (!userInfo) {
+                document.getElementById('resultsContainer').innerHTML = '<p>User information not found. Please fill the form first.</p>';
+                return;
+            }
+            loadCutoffData();
+        };
+
+        function filterColleges(userInfo) {
+            const lowerBound = userInfo.percentile - 10;
+            const upperBound = userInfo.percentile + 10;
+            const category = userInfo.category;
+            const selectedAreas = userInfo.areas;
+
+            const filteredColleges = cutoffData.filter(college => {
+                // Check if college area matches any selected area
+                const areaMatch = college.areas.some(area => selectedAreas.includes(area));
+                if (!areaMatch) return false;
+
+                // Check if any branch cutoff is within percentile range for the category
+                const branchMatch = college.branches.some(branch => {
+                    const cutoff = branch.cutoffs[category];
+                    return cutoff !== undefined && cutoff >= lowerBound && cutoff <= upperBound;
+                });
+
+                return branchMatch;
+            });
+
+            return filteredColleges;
+        }
+
+        function displayResults(colleges, userInfo) {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = '';
+
+            if (colleges.length === 0) {
+                container.innerHTML = '<p>No colleges found matching your criteria.</p>';
+                return;
+            }
+
+            colleges.forEach(college => {
+                const collegeDiv = document.createElement('div');
+                collegeDiv.classList.add('college');
+
+                const title = document.createElement('h2');
+                title.textContent = `${college.collegeCode} - ${college.collegeName}`;
+                collegeDiv.appendChild(title);
+
+                const branchList = document.createElement('ul');
+                college.branches.forEach(branch => {
+                    const cutoff = branch.cutoffs[userInfo.category];
+                    if (cutoff !== undefined && cutoff >= userInfo.percentile - 10 && cutoff <= userInfo.percentile + 10) {
+                        const li = document.createElement('li');
+                        li.textContent = `${branch.branchCode} - ${branch.branchName} (Cutoff: ${cutoff.toFixed(2)})`;
+                        branchList.appendChild(li);
+                    }
+                });
+
+                collegeDiv.appendChild(branchList);
+                container.appendChild(collegeDiv);
+            });
+        }
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'user-info.html';
+        });
+
+        window.onload = function() {
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (!userInfo) {
+                document.getElementById('resultsContainer').innerHTML = '<p>User information not found. Please fill the form first.</p>';
+                return;
+            }
+
+            const filteredColleges = filterColleges(userInfo);
+            displayResults(filteredColleges, userInfo);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Information - College Admission</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>User Information</h1>
+        <form id="userInfoForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required />
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+
+            <label for="percentile">MHT-CET Percentile Range:</label>
+            <input type="range" id="percentile" name="percentile" min="0" max="100" step="0.01" value="50" oninput="percentileOutput.value = percentile.value" />
+            <output id="percentileOutput">50</output>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="OPEN">OPEN</option>
+                <option value="ST">ST</option>
+                <option value="SC">SC</option>
+                <option value="OBC">OBC</option>
+                <option value="EWS">EWS</option>
+                <option value="VJ">VJ</option>
+                <option value="NT">NT</option>
+                <option value="SBC">SBC</option>
+                <!-- Add other categories as needed -->
+            </select>
+
+            <label for="areas">Areas in Pune interested to study (select multiple):</label>
+            <select id="areas" name="areas" multiple size="5" required>
+                <option value="Kothrud">Kothrud</option>
+                <option value="Wakad">Wakad</option>
+                <option value="Baner">Baner</option>
+                <option value="Hadapsar">Hadapsar</option>
+                <option value="Viman Nagar">Viman Nagar</option>
+                <option value="Aundh">Aundh</option>
+                <option value="Pimpri">Pimpri</option>
+                <option value="Hinjewadi">Hinjewadi</option>
+                <option value="Kharadi">Kharadi</option>
+                <option value="Shivaji Nagar">Shivaji Nagar</option>
+                <!-- Add more areas as needed -->
+            </select>
+
+            <a href="http://localhost:8000/cutoff.html"> <button type="submit">Submit</button></a>
+        </form>
+    </div>
+    <script>
+        document.getElementById('userInfoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                fullName: this.fullName.value.trim(),
+                address: this.address.value.trim(),
+                email: this.email.value.trim(),
+                phone: this.phone.value.trim(),
+                percentile: parseFloat(this.percentile.value),
+                category: this.category.value,
+                areas: Array.from(this.areas.selectedOptions).map(option => option.value)
+            };
+
+            localStorage.setItem('userInfo', JSON.stringify(formData));
+
+            window.location.href = 'cutoff.html';
+        });
+
+        // Pre-fill email and phone if available from registration
+        window.onload = function() {
+            const regData = JSON.parse(localStorage.getItem('userRegistration'));
+            if (regData) {
+                document.getElementById('email').value = regData.email || '';
+                document.getElementById('phone').value = regData.phone || '';
+            }
+        };
+    </script>
+</body>
+</html>
